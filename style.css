@@ -85,9 +85,16 @@ body {
   transform-origin: center bottom;
   z-index: 10;
   transition: filter 0.2s ease;
+
+  /* Black pixel outline that hugs the egg shape (not a box border) */
+  filter:
+    drop-shadow( 1px  0px 0px black)
+    drop-shadow(-1px  0px 0px black)
+    drop-shadow( 0px  1px 0px black)
+    drop-shadow( 0px -1px 0px black);
 }
 
-/* Glow on hover */
+/* Gold glow on hover — replaces the outline while hovered */
 .egg:hover {
   filter: drop-shadow(0 0 10px var(--gold)) brightness(1.1);
 }
@@ -449,14 +456,14 @@ body {
     height: 64px;
   }
 
-  /* Hint text — larger font for readability, shorter text */
+  /* Hint text — larger font for readability */
   #hint-text {
     font-size: 18px;
     bottom: 18px;
     padding: 4px 12px;
   }
 
-  /* Hatch overlay — the big egg is the same size, but pun text shrinks */
+  /* Hatch overlay — pun text shrinks */
   #pun-text {
     font-size:  7px;
     padding:    12px 18px;
