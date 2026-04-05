@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Egg Pop 🐣</title>
+
+  <!-- Pixel font from Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
+
+  <!-- GSAP for smooth animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+  <!-- Howler.js for sound effects -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========================================
+       THE WORLD — the big pannable meadow
+       ======================================== -->
+  <div id="world-container">
+    <div id="world">
+      <!-- Clouds and Eggs are added by game.js automatically -->
+    </div>
+  </div>
+
+
+  <!-- ========================================
+       UI LAYER — always fixed on screen
+       ======================================== -->
+  <div id="ui-layer">
+
+    <!-- Top title -->
+    <div id="title-card">🌸 Egg Pop</div>
+
+    <!-- Basket button (bottom right) -->
+    <div id="basket-btn" title="Open your collection!">
+      <img src="assets/ui/wicker-basket.png" alt="Collection Basket" />
+      <div id="basket-count">0</div>
+    </div>
+
+    <!-- Hint text at bottom -->
+    <div id="hint-text">✨ Click &amp; drag to explore &nbsp;•&nbsp; Find the eggs!</div>
+
+  </div>
+
+
+  <!-- ========================================
+       HATCH OVERLAY — appears when egg clicked
+       ======================================== -->
+  <div id="hatch-overlay" class="hidden">
+    <div id="hatch-stage">
+      <!-- Big egg image goes here via JS -->
+    </div>
+    <div id="pun-text" class="hidden"></div>
+  </div>
+
+
+  <!-- ========================================
+       INVENTORY MODAL — basket opens this
+       ======================================== -->
+  <div id="inventory-modal" class="hidden">
+    <div id="inventory-box">
+      <button id="close-inventory">✕</button>
+      <h2>✨ Your Collection ✨</h2>
+      <div id="inventory-grid"></div>
+      <p id="empty-msg">Nothing yet... go find some eggs! 🌿</p>
+    </div>
+  </div>
+
+
+  <!-- ========================================
+       PARTICLE CANVAS — sparkles on hatch
+       ======================================== -->
+  <canvas id="particle-canvas"></canvas>
+
+
+  <script src="game.js"></script>
+</body>
+</html>
